@@ -34,9 +34,8 @@ var scoreMap = map[string]int{
 // Score scrabble
 func Score(input string) int {
 	score := 0
-	inputArr := strings.Split(input, "")
-	for _, item := range inputArr {
-		score += scoreMap[strings.ToUpper(item)]
+	for _, item := range input {
+		score += scoreMap[strings.ToUpper(string(item))]
 	}
 	return score
 }
