@@ -1,41 +1,42 @@
 package scrabble
 
-import "strings"
+import "unicode"
 
-var scoreMap = map[string]int{
-	"A": 1,
-	"B": 3,
-	"C": 3,
-	"D": 2,
-	"E": 1,
-	"F": 4,
-	"G": 2,
-	"H": 4,
-	"I": 1,
-	"J": 8,
-	"K": 5,
-	"L": 1,
-	"M": 3,
-	"N": 1,
-	"O": 1,
-	"P": 3,
-	"Q": 10,
-	"R": 1,
-	"S": 1,
-	"T": 1,
-	"U": 1,
-	"V": 4,
-	"W": 4,
-	"X": 8,
-	"Y": 4,
-	"Z": 10,
+var scoreMap = map[rune]int{
+	65: 1,
+	66: 3,
+	67: 3,
+	68: 2,
+	69: 1,
+	70: 4,
+	71: 2,
+	72: 4,
+	73: 1,
+	74: 8,
+	75: 5,
+	76: 1,
+	77: 3,
+	78: 1,
+	79: 1,
+	80: 3,
+	81: 10,
+	82: 1,
+	83: 1,
+	84: 1,
+	85: 1,
+	86: 4,
+	87: 4,
+	88: 8,
+	89: 4,
+	90: 10,
 }
 
 // Score scrabble
 func Score(input string) int {
 	score := 0
-	for _, item := range input {
-		score += scoreMap[strings.ToUpper(string(item))]
+	inputRune := []rune(input)
+	for _, item := range inputRune {
+		score += scoreMap[unicode.ToUpper(item)]
 	}
 	return score
 }
