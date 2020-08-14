@@ -3,32 +3,32 @@ package scrabble
 import "unicode"
 
 var scoreMap = map[rune]int{
-	65: 1,
-	66: 3,
-	67: 3,
-	68: 2,
-	69: 1,
-	70: 4,
-	71: 2,
-	72: 4,
-	73: 1,
-	74: 8,
-	75: 5,
-	76: 1,
-	77: 3,
-	78: 1,
-	79: 1,
-	80: 3,
-	81: 10,
-	82: 1,
-	83: 1,
-	84: 1,
-	85: 1,
-	86: 4,
-	87: 4,
-	88: 8,
-	89: 4,
-	90: 10,
+	'a': 1,
+	'b': 3,
+	'c': 3,
+	'd': 2,
+	'e': 1,
+	'f': 4,
+	'g': 2,
+	'h': 4,
+	'i': 1,
+	'j': 8,
+	'k': 5,
+	'l': 1,
+	'm': 3,
+	'n': 1,
+	'o': 1,
+	'p': 3,
+	'q': 10,
+	'r': 1,
+	's': 1,
+	't': 1,
+	'u': 1,
+	'v': 4,
+	'w': 4,
+	'x': 8,
+	'y': 4,
+	'z': 10,
 }
 
 // Score scrabble
@@ -36,7 +36,7 @@ func Score(input string) int {
 	score := 0
 	inputRune := []rune(input)
 	for _, item := range inputRune {
-		score += scoreMap[unicode.ToUpper(item)]
+		score += scoreMap[unicode.ToLower(item)]
 	}
 	return score
 }
