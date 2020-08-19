@@ -5,9 +5,8 @@ import "unicode"
 // IsIsogram determine if a word or phrase is an isogram.
 func IsIsogram(input string) bool {
 	r := map[rune]bool{}
-	iRune := []rune(input)
 
-	for _, item := range iRune {
+	for _, item := range input {
 		_, ok := r[unicode.ToLower(item)]
 		if ok {
 			return false
